@@ -1,3 +1,10 @@
+/*Une adresse IP est une suite de 4 entiers compris entre 0 et 255 et 
+ * séparés par des points (on parle de notation décimal pointée - par 
+ * exemple 134.1.4.57 -). Écrire un programme qui saisit 4 entiers 
+ * (on ne vérifiera pas que les valeurs saisies sont comprises entre 0 et 255) 
+ * et les affiche sous la forme d’une adresse internet. 
+ */
+
 import java.util.Scanner;
 
 public class AdresseIp{
