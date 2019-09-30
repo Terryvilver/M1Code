@@ -2,6 +2,8 @@
  * en dollar. Vous saisirez le prix en
  * euro et le taux de change euro/dollar.
  */
+
+ //ajout de texte
  import java.util.Scanner;
  
  public class Conversion{
