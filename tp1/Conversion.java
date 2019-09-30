@@ -4,6 +4,7 @@
  */
 
  //ajout de texte
+ //ici j'ai rajouté "ajouté de texte" en fusionnant la branche "test" avec ma branche "master"
  import java.util.Scanner;
  
  public class Conversion{
