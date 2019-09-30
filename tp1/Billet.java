@@ -6,73 +6,26 @@ import java.util.Scanner;
 
 public class Billet{
 
-    public static int billet_500(int nombre)
-    {
-        return nombre / 500;
-    }
-
-    public static int billet_200(int nombre)
-    {
-        return nombre / 200;
-    }
-
-    public static int billet_100(int nombre)
-    {
-        return nombre / 100;
-    }
-
-    public static int billet_50(int nombre)
-    {
-        return nombre / 50;
-    }
-
-    public static int billet_20(int nombre)
-    {
-        return nombre / 20;
-    }
-
-    public static int billet_10(int nombre)
-    {
-        return nombre / 10;
-    }
-
-    public static int billet_5(int nombre)
-    {
-        return nombre / 5;
-    }
     public static void main(String []args)
     {
+        int nombre;
+        int []billet = {0, 0, 0, 0, 0, 0, 0};
+        int []valeurBillet = {500, 200, 100, 50, 20, 10, 5};
+
         Scanner scan = new Scanner(System.in);
-        int nombre, nombreA;
-        int b500, b200, b100, b50, b20, b10, b5;
 
         System.out.print("Saisir un montant : ");
-
         nombre = scan.nextInt();
-        nombreA = nombre;
-
-        b500 = billet_500(nombre);
-        nombre = nombre - (b500 * 500);
-
-        b200 = billet_200(nombre);
-        nombre = nombre - (b200 * 200);
-
-        b100 = billet_100(nombre);
-        nombre = nombre - (b100 * 100);
-
-        b50 = billet_50(nombre);
-        nombre = nombre - (b50 * 50);
-        
-        b20 = billet_20(nombre);
-        nombre = nombre - (b20 * 20);
-
-        b10 = billet_10(nombre);
-        nombre = nombre - (b10 * 10);
-
-        b5 = billet_5(nombre);
-        nombre = nombre - (b5 * 5);
 
         System.out.print("\n");
-        System.out.print(nombreA + "€ = " + b500 + "*500€ + " + b200 + "*200€ + " + b100 + "*100€ + " + b50 + "*50€ + " + b20 + "*20€ + " + b10 + "*10€ + " + b5 + "*5€ + "+ nombre +"€." );
+        System.out.print(nombre);
+
+        for(int i = 0 ; i < billet.length ; i++)
+        {
+            billet[i] = nombre / valeurBillet[i];
+            nombre = nombre - (billet[i] * valeurBillet[i]);
+        }
+
+        System.out.print("€ = " + billet[0] + "*500€ + " + billet[1] + "*200€ + " + billet[2] + "*100€ + " + billet[3] + "*50€ + " + billet[4] + "*20€ + " + billet[5] + "*10€ + " + billet[6] + "*5€ + "+ nombre +"€." );
     }
 }
