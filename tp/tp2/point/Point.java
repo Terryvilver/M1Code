@@ -1,17 +1,17 @@
 import java.util.*;
 
-class Points {
-	private float x;
+public class Point {
+		private float x;
 	private float y;
 	Scanner scan = new Scanner(System.in);
 	
 	
-	Points() {
+	Point() {
 		x = 0;
 		y = 0;
 	}
 	
-	Points(float x, float y) {
+	Point(float x, float y) {
 		this.x = x;
 		this.y = y;
 	}
@@ -43,11 +43,9 @@ class Points {
 		System.out.print("Valeur de y: ");
 		setY(scan.nextFloat());
 	}
-}
-
-public class Point {
+	
 	public static void main(String []args) {
-			Points p1 = new Points(5, 5);
+			Point p1 = new Point(5, 5);
 			System.out.println("Coordonnée de x: " + p1.getX() );
 			System.out.println("Coordonnée de y: " + p1.getY() );
 			
