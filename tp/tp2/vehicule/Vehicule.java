@@ -66,6 +66,7 @@ public class Vehicule {
     public String toString() {
         return "(type: " + this.type + ";poids: " + this.poids + ";PTAC: " + this.ptac + ";places: " + this.places +")";
     }
+    
     public static void main(String []args) {
         Vehicule a = new Vehicule("voiture", 1.2f, 1.9f, 5);
         System.out.println(a);
