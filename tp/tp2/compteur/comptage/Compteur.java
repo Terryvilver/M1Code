@@ -3,6 +3,7 @@
 2. l’incrémentera 10 fois, puis affichera à nouveau sa valeur ;
 3. le décrémentera 20 fois, puis affichera une troisième fois sa valeur.
 L’affichage de ce programme doit donner (quelque chose comme) "0 10 0". */
+package comptage;
 
 import java.util.*;
 
@@ -10,7 +11,7 @@ public class Compteur {
     private int compte; 
 
     /* Constructeur */
-    Compteur() {
+    public Compteur() {
         compte = 0;
     }
 
@@ -38,16 +39,5 @@ public class Compteur {
     /* Affichage */
     public String toString() {
         return "" + compte;
-    }
-
-    public static void main(String []args) {
-        Compteur c1 = new Compteur();
-        System.out.print(c1 + " ");
-
-        c1.incrementation(10);
-        System.out.print(c1 + " ");
-
-        c1.decrementation(20);
-        System.out.print(c1 + " ");
     }
 }
