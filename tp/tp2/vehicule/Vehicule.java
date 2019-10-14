@@ -69,9 +69,9 @@ public class Vehicule {
     
     public static void main(String []args) {
         Vehicule a = new Vehicule("voiture", 1.2f, 1.9f, 5);
+        Vehicule b = new Vehicule();
         System.out.println(a);
 
-        Vehicule b = new Vehicule();
         System.out.println(b.getType());
         System.out.println(b.getPlaces());
         System.out.println(b.getPvide());
