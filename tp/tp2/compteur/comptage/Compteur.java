@@ -21,12 +21,13 @@ public class Compteur {
     }
 
     /* Methode d'instance  */
-    public void incrementation(int a) {
+    public Compteur incrementation(int a) {
         for(int i = 1; i <= a; i++)
             this.compte++;
+        return this; //il faut retourner la classe en correspondante pour utiliser les compteurs en cascade.
     }
 
-    public void decrementation(int a) {
+    public Compteur decrementation(int a) {
         for(int i = 1; i <= a; i++) {
             if(this.compte == 0) {
 
@@ -34,6 +35,7 @@ public class Compteur {
             else 
                 this.compte--;
         }
+        return this; //il faut retourner la classe en correspondante pour utiliser les compteurs en cascade.
     }
 
     /* Affichage */
