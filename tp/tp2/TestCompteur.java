@@ -1,9 +1,8 @@
-package test;
-import comptage.Compteur;
+package classes;
 
-public class Test {   
+public class TestCompteur {   
     public static void main(String []args) {
-        comptage.Compteur c1 = new Compteur();
+        Compteur c1 = new Compteur();
         System.out.print(c1 + " ");
 
         c1.incrementation(80); 

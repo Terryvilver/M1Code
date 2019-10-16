@@ -1,15 +1,20 @@
-public class Chronometre {
+package classes;
+import classes.*;
+
+public class Chronometre extends Compteur{
     private int heure;
     private int minute;
     private int seconde;
 
     public Chronometre() {
+        super();
         heure = 0;
         minute = 0;
         seconde = 0;
     }
 
-    public Chronometre(int heure, int minute, int seconde) {
+    public Chronometre(int compte, int heure, int minute, int seconde) {
+		super(compte);
         this.heure = heure;
         this.minute = minute;
         this.seconde = seconde;
