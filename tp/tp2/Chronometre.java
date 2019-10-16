@@ -8,16 +8,15 @@ public class Chronometre extends Compteur{
 
     public Chronometre() {
         super();
-        heure = 0;
-        minute = 0;
-        seconde = 0;
+        heure = super.hh;
+        minute = super.mm;
+        seconde = super.ss;
     }
 
-    public Chronometre(int compte, int heure, int minute, int seconde) {
-		super(compte);
-        this.heure = heure;
-        this.minute = minute;
-        this.seconde = seconde;
+    public Chronometre(int heure, int minute, int seconde) {
+        this.heure = super.hh;
+        this.minute = super.mm;
+        this.seconde = super.ss;
     }
 
     public int getHeure() {

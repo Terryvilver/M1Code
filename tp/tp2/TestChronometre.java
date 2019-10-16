@@ -6,5 +6,11 @@ public class TestChronometre {
 		Chronometre c1 = new Chronometre();
 		c1.incrementation();
 		System.out.println(c1.getSeconde());
+		c1.incrementation();
+		System.out.println(c1.getSeconde());
+		c1.incrementation();
+		System.out.println(c1.getSeconde());
+		c1.incrementation();
+		System.out.println(c1.getSeconde());
     }
 }

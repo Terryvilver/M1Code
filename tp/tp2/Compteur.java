@@ -8,10 +8,23 @@ import java.util.*;
 
 public class Compteur {
     protected int compte; 
+    protected int ss;
+    protected int mm;
+    protected int hh;
 
     /* Constructeur */
     public Compteur() {
         compte = 0;
+        ss = 0;
+        mm = 0;
+        hh = 0;
+    }
+    
+    public Compteur(int compte, int ss, int mm, int hh) {
+        this.compte = compte;
+        this.ss = ss;
+        this.mm = mm;
+        this.hh = hh;
     }
     
     public Compteur(int compte) {
