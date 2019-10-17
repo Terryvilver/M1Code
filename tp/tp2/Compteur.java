@@ -19,11 +19,10 @@ public class Compteur {
         hh = 0;
     }
     
-    public Compteur(int compte, int ss, int mm, int hh) {
-        this.compte = compte;
-        this.ss = ss;
-        this.mm = mm;
+    public Compteur(int hh, int mm, int ss) {
         this.hh = hh;
+        this.mm = mm;
+        this.ss = ss;
     }
     
     public Compteur(int compte) {
