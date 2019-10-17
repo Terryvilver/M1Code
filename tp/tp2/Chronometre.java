@@ -1,6 +1,3 @@
-package classes;
-import classes.*;
-
 public class Chronometre extends Compteur{
     private int heure;
     private int minute;
