@@ -21,8 +21,8 @@ public class TestChronometre {
 					System.out.println(c1.getHeure() + ":" + c1.getMinute() + ":" + c1.getSeconde());
 
 					//Arrête le chronometre
-					arret = /*scan.nextLine()*/"a";
-					arret1  = arret.charAt(0);
+					/*Nous souhaitons crée un moyen de stopper le chronomètre en détectant la frappe d'une touche*/
+					
 				}
 			}catch(InterruptedException e) {
 
