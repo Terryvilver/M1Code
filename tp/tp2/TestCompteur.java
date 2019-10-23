@@ -1,5 +1,3 @@
-package classes;
-
 public class TestCompteur {   
     public static void main(String []args) {
         Compteur c1 = new Compteur();
