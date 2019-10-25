@@ -38,7 +38,7 @@ public class Compteur {
     public Compteur incrementation(int a) {
         for(int i = 1; i <= a; i++)
             this.compte++;
-        return this; //il faut retourner la classe en correspondante pour utiliser les compteurs en cascade.
+        return this; //il faut retourner la classe correspondante pour utiliser les compteurs en cascade.
     }
 
     public Compteur decrementation(int a) {
@@ -49,7 +49,7 @@ public class Compteur {
             else 
                 this.compte--;
         }
-        return this; //il faut retourner la classe en correspondante pour utiliser les compteurs en cascade.
+        return this; //il faut retourner la classe correspondante pour utiliser les compteurs en cascade.
     }
 
     /* Affichage */
