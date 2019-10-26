@@ -1,4 +1,4 @@
-public class Chronometre extends Compteur{
+public class Chronometre extends Compteur {
 
     public Chronometre() {
         super();
