@@ -1,4 +1,6 @@
-public class CompteurBorne extends Compteur{
+import java.util.*;
+
+public class CompteurBorne extends Compteur {
     /* Constructeur */
     CompteurBorne() {
         super();

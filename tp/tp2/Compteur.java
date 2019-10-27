@@ -6,7 +6,7 @@ L’affichage de ce programme doit donner (quelque chose comme) "0 10 0". */
 import java.util.*;
 
 public class Compteur {
-    protected int compte; 
+    protected int compte = 0; 
     protected int ss;
     protected int mm;
     protected int hh;
