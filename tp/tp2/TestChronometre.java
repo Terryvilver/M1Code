@@ -5,7 +5,6 @@ public class TestChronometre {
 		Scanner scan = new Scanner(System.in);
 		Chronometre c1 = new Chronometre();
 		boolean lancement = false; 
-		String arret; char arret1;
 		int test = 0;
 
 		System.out.println("Voulez-vous lancez le chronometre ?(1:oui ou 2:non)");

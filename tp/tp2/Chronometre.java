@@ -20,7 +20,7 @@ public class Chronometre extends Compteur {
         return super.ss;
     }
 
-    public void incrementation() {
+    public void incrementation() {      
         if(super.mm == 59 && super.ss == 59) {
             super.hh++;
             super.mm = 0;

@@ -1,9 +1,11 @@
+//Le chronometre reste bloqué à 59 sec.
+
 import java.util.*;
 
 public class TestCompteurBorne {
     public static void main(String []args) {
         boolean lancement = true;
-        CompteurBorne cp = new CompteurBorne(0);
+        CompteurBorne cp = new CompteurBorne();
 
         try {
 				while(lancement == true) {
@@ -11,9 +13,8 @@ public class TestCompteurBorne {
 					cp.incrementation();
 					System.out.println(cp.getCompte());
 
-					//Arrête le chronometre
-					/*Nous souhaitons crée un moyen de stopper le chronomètre en détectant la frappe d'une touche*/
-
+					if(cp.getCompte() == 59)
+						lancement = false;
 				}
 			}catch(InterruptedException e) { }
 	}
