@@ -30,6 +30,18 @@ public class Compteur {
     }
 
     /* Getter */
+    public int getSs() {
+        return this.ss;
+    }
+
+    public int getMm() {
+        return this.mm;
+    }
+
+    public int getHh() {
+        return this.hh;
+    }
+
     public int getCompte() {
         return this.compte;
     }
