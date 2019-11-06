@@ -1,0 +1,20 @@
+Permet de enregistrer les données du score, nom
+et prenom du joueur en fin de partie dans la
+classe principale de jeu que je vais créer.
+	 
+	 public static void main(String []args) throws Exception {
+		Scanner scan = new Scanner(System.in);
+		Joueur t = new Joueur();
+		PrintWriter texte = null;
+		FileWriter f = new FileWriter("test");
+		 
+		System.out.println("Votre nom ?");
+		t.setNom(scan.nextLine());
+		 
+		System.out.println("Votre prenom ?");
+		t.setPrenom(scan.nextLine());
+		 
+		f.write(t.getNom()+ "\t\t");
+		f.write(t.getPrenom());
+		f.close();
+	}
