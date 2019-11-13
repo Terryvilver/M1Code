@@ -36,7 +36,7 @@ public class Joueur {
 		Scanner scan = new Scanner(System.in);
 		Joueur t = new Joueur();
 		PrintWriter texte = null;
-		FileWriter f = new FileWriter("test");
+		FileWriter f = new FileWriter("Joueurs.txt");
 		 
 		System.out.println("Votre nom ?");
 		t.setNom(scan.nextLine());
