@@ -16,11 +16,13 @@ public class Jeu {
 		
 		String line = null;
 		
+		//lecture du fichier dans ma liste
 		while((reader.readLine()) != null) {
-				mots.add(f);
-			if(mots.contains("adorer")) {
-				System.out.println("Le fichier contient le mot 'adorer'");
-			}
+			mots.add(reader.readLine());
+		}
+
+		if(mots.contains("adorer")) {
+			System.out.println("Le fichier contient le mot 'adorer'");
 		}	
 	}
 }
