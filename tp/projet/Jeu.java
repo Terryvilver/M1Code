@@ -11,22 +11,43 @@ public class Jeu {
 	public File dico_long;
 	public ArrayList<String> mots;
 	public String tab_mot [];
+	public int rand_int;
+	public char tab_hide [];
 
 	Jeu() {
 		nb_essai = 20;
 		lettre = ' ';
 		dico_court = new File("monDicoCourt.txt");
 		dico_long = new File("monDicoLong.txt");
-		mots = new ArrayList<String>();
-		tab_mot = null;
+		mots = new ArrayList<String>(); //liste des mots récupérer dans les dico
+		tab_mot = null; //liste de mot insérer dans un tableau de String
+		rand_int = 0;
+		tab_hide = null;
 	}
 
+	//crée un mot caché avec des "******".
+	public void hide() {
+		int compteur = 0;
+		for(int i = 0; i < tab_mot[rand_int].length(); i++) {    
+            if(tab_mot[rand_int].charAt(i) != ' ')    
+            	compteur++;    
+        }
+
+		tab_hide = new char [compteur];
+		for(int i = 0; i < compteur; i++) {    
+			tab_hide[i] = '*';
+        }
+
+		System.out.println(tab_mot[rand_int]);
+		System.out.print("Le mot secret est : " );
+		System.out.print(tab_hide);
+	}
 	//sélectionne un mot dans mon tableau de façon aléatoire
 	public void randomWord() {
 		Random rand = new Random();
+		rand_int = rand.nextInt(601);
 
-		int rand_int = rand.nextInt(601);
-		System.out.println(tab_mot[rand_int]);
+		this.hide();
 	}
 
 	/*public void randomWord1() {
