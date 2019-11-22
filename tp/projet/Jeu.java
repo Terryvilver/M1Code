@@ -25,6 +25,37 @@ public class Jeu {
 		tab_hide = null;
 	}
 
+	public void essais () {
+		while(nb_essai != 0) {
+			this.affichage();
+			this.lettre();
+			this.comparaison();
+			nb_essai--;
+		}
+	}
+
+	public void affichage () {
+		System.out.println(tab_mot[rand_int]);
+		System.out.print("Le mot secret est : " );
+		System.out.print(tab_hide);
+		System.out.print("\n");
+	}
+
+	public void comparaison () {
+		int i = 0;
+		while(i < tab_mot[rand_int].length()) {
+			if(lettre == tab_mot[rand_int].charAt(i))
+				tab_hide[i] = lettre;
+		i++;
+		}
+	}
+
+	public void lettre () {
+		Scanner scan = new Scanner(System.in);
+		System.out.print("Votre lettre : ");
+		lettre = scan.next().charAt(0);
+	}
+
 	//crée un mot caché avec des "******".
 	public void hide() {
 		int compteur = 0;
@@ -38,9 +69,17 @@ public class Jeu {
 			tab_hide[i] = '*';
         }
 
+		/*
 		System.out.println(tab_mot[rand_int]);
 		System.out.print("Le mot secret est : " );
 		System.out.print(tab_hide);
+		System.out.print("\n");
+		this.lettre();
+		this.comparaison();
+		System.out.print(tab_hide);
+		System.out.print("Le mot secret est : " );
+		System.out.print(tab_hide);
+		*/
 	}
 	//sélectionne un mot dans mon tableau de façon aléatoire
 	public void randomWord() {
@@ -97,6 +136,7 @@ public class Jeu {
 	public static void main(String []args) throws IOException {	
 		Jeu parti1 = new Jeu();
 		parti1.stockage1();
+		parti1.essais();
 		//Jeu parti2 = new Jeu();
 		//parti2.stockage2();
 		/*ce programme affiche les mots avec des indices de façon aléatoire.
