@@ -5,18 +5,19 @@ import java.io.IOException;
 import java.util.*;
 
 public class Jeu {
-	public int nb_essai;
-	public char lettre;
-	public File dico_court;
-	public File dico_long;
-	public ArrayList<String> mots;
-	public String tab_mot [];
-	public int rand_int;
-	public char tab_hide [];
+	protected static int nb_essai = 1;
+	protected char lettre;
+	protected File dico_court;
+	protected File dico_long;
+	protected ArrayList<String> mots;
+	protected String tab_mot [];
+	protected int rand_int;
+	protected char tab_hide [];
+	protected Joueur joueur1;
 
 	Jeu() {
-		nb_essai = 20;
 		lettre = ' ';
+		joueur1 = new Joueur();
 		dico_court = new File("monDicoCourt.txt");
 		dico_long = new File("monDicoLong.txt");
 		mots = new ArrayList<String>(); //liste des mots récupérer dans les dico
@@ -25,29 +26,80 @@ public class Jeu {
 		tab_hide = null;
 	}
 
+	
+	public boolean tableauRempli() {
+
+		for(int i = 0; i < tab_mot[rand_int].length(); i++) {
+			if(tab_hide[i] == '*' && nb_essai <= 20) {
+				return true;
+			}
+		}
+		this.calculScore();
+		return false;
+	}
+
+	public void calculScore() {
+		if( nb_essai == 1 )
+			joueur1.score = 100;
+		else if( nb_essai == 2) 
+			joueur1.score = 50;
+		else if( nb_essai == 3) 
+			joueur1.score = 25;
+		else if( nb_essai == 4) 
+			joueur1.score = 10;
+		else if( nb_essai == 5)
+			joueur1.score = 5;
+		else
+			joueur1.score = 0;
+
+	}
+
 	public void essais () {
-		while(nb_essai != 0) {
+		joueur1.ecriture();
+		System.out.println("Le nombre de lettres de votre mot secret est de " + tab_mot[rand_int].length() + " lettres.");
+		while(this.tableauRempli()) {
 			this.affichage();
 			this.lettre();
 			this.comparaison();
-			nb_essai--;
 		}
+
+		if(nb_essai < 6)
+			System.out.print("Vous avez gagné en " + nb_essai + " essais !!!");
+		else
+			System.out.print("Vous avez perdu...");
+
+		joueur1.ecriture_fichier_texte();
 	}
 
 	public void affichage () {
 		System.out.println(tab_mot[rand_int]);
-		System.out.print("Le mot secret est : " );
-		System.out.print(tab_hide);
+		System.out.print("Le mot secret est : ");
+		System.out.println(tab_hide);
+		System.out.print(nb_essai);
 		System.out.print("\n");
 	}
 
 	public void comparaison () {
 		int i = 0;
+		boolean a = false; //condition incrémentant le nb d'essai
+		boolean b = false; //condition incrémentant l'echec d'une tentative
+
 		while(i < tab_mot[rand_int].length()) {
-			if(lettre == tab_mot[rand_int].charAt(i))
+			if(lettre == tab_mot[rand_int].charAt(i)) {
 				tab_hide[i] = lettre;
+				a = true;
+				b = true ;
+			}
 		i++;
 		}
+		if( a == false ) {
+			nb_essai++;
+		}
+
+		if(b == true)			
+			System.out.println("Une tentative avec succès");
+		else
+			System.out.println("Une tentative sans succès");
 	}
 
 	public void lettre () {
@@ -113,7 +165,7 @@ public class Jeu {
 
 		//appel de randomWord pour sélectionnez un mot dans mon tableau de mot
 		this.randomWord();
-	} 	
+	} 
 
 	/*public void stockage2() throws IOException {
 		BufferedReader reader = new BufferedReader(new FileReader(dico_long));
