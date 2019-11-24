@@ -120,18 +120,6 @@ public class Jeu {
 		for(int i = 0; i < compteur; i++) {    
 			tab_hide[i] = '*';
         }
-
-		/*
-		System.out.println(tab_mot[rand_int]);
-		System.out.print("Le mot secret est : " );
-		System.out.print(tab_hide);
-		System.out.print("\n");
-		this.lettre();
-		this.comparaison();
-		System.out.print(tab_hide);
-		System.out.print("Le mot secret est : " );
-		System.out.print(tab_hide);
-		*/
 	}
 	//sélectionne un mot dans mon tableau de façon aléatoire
 	public void randomWord() {
@@ -145,7 +133,7 @@ public class Jeu {
 		Random rand = new Random();
 
 		int rand_int = rand.nextInt(22001);
-		System.out.println(tab_mot[rand_int]);
+		this.hide();
 	}*/	
 
 	public void stockage1() throws IOException {
