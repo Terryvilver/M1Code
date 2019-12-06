@@ -30,7 +30,7 @@ public class Jeu {
 	public boolean tableauRempli() {
 
 		for(int i = 0; i < tab_mot[rand_int].length(); i++) {
-			if(tab_hide[i] == '*' && nb_essai <= 20) {
+			if(tab_hide[i] == '*' && nb_essai <= 20) { // configure que en 10 essais ratés, on perd ou que "tab_hide" est plus constitué de caractère inconnu, on gagne
 				return true;
 			}
 		}
@@ -38,6 +38,67 @@ public class Jeu {
 		return false;
 	}
 
+	public void affichage_pendu() {
+		if( nb_essai == 1 ) {
+			for (int i = 0; i < 15; i++ ) {
+				System.out.print("\n");
+			}
+			System.out.print("**********************************");
+		}
+		else if( nb_essai == 2) {
+			for(int k = 0; k < 15 ; k++) {
+				System.out.println("   *");
+			}
+			System.out.print("**********************************");
+		}
+		else if( nb_essai == 3) {
+			System.out.print("   **********************\n");
+			for(int k = 0; k < 15 ; k++) {
+				System.out.println("   *");
+			}
+			System.out.print("**********************************");
+		}
+		else if( nb_essai == 4) {
+			System.out.print("   **********************\n");
+			for(int k = 0; k < 15 ; k++) {
+				if(k == 0) 
+					System.out.print("   *    *\n");
+				else if(k == 1) 
+					System.out.print("   *   *\n");
+				else if(k == 2) 
+					System.out.print("   *  *\n");
+				else if(k == 3) 
+					System.out.print("   * *\n");
+				else if(k == 4) 
+					System.out.print("   **\n");
+				else
+					System.out.print("   *\n");		
+			}
+			System.out.print("**********************************");
+		}
+			
+		else if( nb_essai == 5) {
+			System.out.print("   **********************\n");
+			for(int k = 0; k < 15 ; k++) {
+				if(k == 0) 
+					System.out.print("   *    *         *\n");
+				else if(k == 1) 
+					System.out.print("   *   *          *\n");
+				else if(k == 2) 
+					System.out.print("   *  *           *\n");
+				else if(k == 3) 
+					System.out.print("   * *            *\n");
+				else if(k == 4) 
+					System.out.print("   **\n");
+				else
+					System.out.print("   *\n");		
+			}
+			System.out.print("**********************************");
+		}
+		else
+			joueur1.score = 0;
+	
+	}
 	public void calculScore() {
 		if( nb_essai == 1 )
 			joueur1.score = 100;
@@ -57,13 +118,14 @@ public class Jeu {
 	public void essais () {
 		joueur1.ecriture();
 		System.out.println("Le nombre de lettres de votre mot secret est de " + tab_mot[rand_int].length() + " lettres.");
+		this.affichage_pendu();
 		while(this.tableauRempli()) {
 			this.affichage();
 			this.lettre();
 			this.comparaison();
 		}
 
-		if(nb_essai < 6)
+		if(nb_essai < 20)
 			System.out.print("Vous avez gagné en " + nb_essai + " essais !!!");
 		else
 			System.out.print("Vous avez perdu...");
@@ -72,10 +134,11 @@ public class Jeu {
 	}
 
 	public void affichage () {
-		System.out.println(tab_mot[rand_int]);
+		System.out.print("\n");
+		//System.out.println(tab_mot[rand_int]);
 		System.out.print("Le mot secret est : ");
 		System.out.println(tab_hide);
-		System.out.print(nb_essai);
+		//System.out.print(nb_essai);
 		System.out.print("\n");
 	}
 
@@ -96,10 +159,16 @@ public class Jeu {
 			nb_essai++;
 		}
 
-		if(b == true)			
+		if(b == true) {
+			this.affichage_pendu();
+			System.out.print("\n");	
 			System.out.println("Une tentative avec succès");
-		else
+		}
+		else {
+			this.affichage_pendu();
+			System.out.print("\n");
 			System.out.println("Une tentative sans succès");
+		}
 	}
 
 	public void lettre () {
