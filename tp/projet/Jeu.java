@@ -30,7 +30,7 @@ public class Jeu {
 	public boolean tableauRempli() {
 
 		for(int i = 0; i < tab_mot[rand_int].length(); i++) {
-			if(tab_hide[i] == '*' && nb_essai <= 20) { // configure que en 10 essais ratés, on perd ou que "tab_hide" est plus constitué de caractère inconnu, on gagne
+			if(tab_hide[i] == '*' && nb_essai < 10) { // configure que en 10 essais ratés, on perd ou que "tab_hide" est plus constitué de caractère inconnu, on gagne
 				return true;
 			}
 		}
@@ -38,29 +38,29 @@ public class Jeu {
 		return false;
 	}
 
-	public void affichage_pendu() {
+	public void affichage_pendu() { //Dessine le pendu en mode terminal
 		if( nb_essai == 1 ) {
-			for (int i = 0; i < 15; i++ ) {
+			for (int i = 0; i < 17; i++ ) {
 				System.out.print("\n");
 			}
 			System.out.print("**********************************");
 		}
 		else if( nb_essai == 2) {
-			for(int k = 0; k < 15 ; k++) {
+			for(int k = 0; k < 17 ; k++) {
 				System.out.println("   *");
 			}
 			System.out.print("**********************************");
 		}
 		else if( nb_essai == 3) {
 			System.out.print("   **********************\n");
-			for(int k = 0; k < 15 ; k++) {
+			for(int k = 0; k < 17 ; k++) {
 				System.out.println("   *");
 			}
 			System.out.print("**********************************");
 		}
 		else if( nb_essai == 4) {
 			System.out.print("   **********************\n");
-			for(int k = 0; k < 15 ; k++) {
+			for(int k = 0; k < 17 ; k++) {
 				if(k == 0) 
 					System.out.print("   *    *\n");
 				else if(k == 1) 
@@ -79,7 +79,7 @@ public class Jeu {
 			
 		else if( nb_essai == 5) {
 			System.out.print("   **********************\n");
-			for(int k = 0; k < 15 ; k++) {
+			for(int k = 0; k < 17 ; k++) {
 				if(k == 0) 
 					System.out.print("   *    *         *\n");
 				else if(k == 1) 
@@ -95,10 +95,180 @@ public class Jeu {
 			}
 			System.out.print("**********************************");
 		}
-		else
-			joueur1.score = 0;
-	
+		else if( nb_essai == 6) {
+			System.out.print("   **********************\n");
+			for(int k = 0; k < 17 ; k++) {
+				if(k == 0) 
+					System.out.print("   *    *         *\n");
+				else if(k == 1) 
+					System.out.print("   *   *          *\n");
+				else if(k == 2) 
+					System.out.print("   *  *           *\n");
+				else if(k == 3) 
+					System.out.print("   * *            *\n");
+				else if(k == 4) 
+					System.out.print("   **         *       *\n");
+				else if(k == 5)
+					System.out.print("   *          *       *\n");
+				else if(k == 6)
+					System.out.print("   *              *\n");
+				else
+					System.out.print("   *\n");		
+			}
+			System.out.print("**********************************");
+		}
+		else if( nb_essai == 7) {
+			System.out.print("   **********************\n");
+			for(int k = 0; k < 17 ; k++) {
+				if(k == 0) 
+					System.out.print("   *    *         *\n");
+				else if(k == 1) 
+					System.out.print("   *   *          *\n");
+				else if(k == 2) 
+					System.out.print("   *  *           *\n");
+				else if(k == 3) 
+					System.out.print("   * *            *\n");
+				else if(k == 4) 
+					System.out.print("   **         *       *\n");
+				else if(k == 5)
+					System.out.print("   *          *       *\n");
+				else if(k == 6)
+					System.out.print("   *              *\n");
+				else if(k == 7)
+					System.out.print("   *              *\n");
+				else if(k == 8)
+					System.out.print("   *       ***    *    ***\n");
+				else if(k == 9)
+					System.out.print("   *          *   *   *\n");
+				else if(k == 10)
+					System.out.print("   *           *******\n");
+				else
+					System.out.print("   *\n");		
+			}
+			System.out.print("**********************************");
+
+		}
+		else if( nb_essai == 8) {
+			System.out.print("   **********************\n");
+			for(int k = 0; k < 17 ; k++) {
+				if(k == 0) 
+					System.out.print("   *    *         *\n");
+				else if(k == 1) 
+					System.out.print("   *   *          *\n");
+				else if(k == 2) 
+					System.out.print("   *  *           *\n");
+				else if(k == 3) 
+					System.out.print("   * *            *\n");
+				else if(k == 4) 
+					System.out.print("   **         *       *\n");
+				else if(k == 5)
+					System.out.print("   *          *       *\n");
+				else if(k == 6)
+					System.out.print("   *              *\n");
+				else if(k == 7)
+					System.out.print("   *              *\n");
+				else if(k == 8)
+					System.out.print("   *       ***    *    ***\n");
+				else if(k == 9)
+					System.out.print("   *          *   *   *\n");
+				else if(k == 10)
+					System.out.print("   *           *******\n");
+				else if(k == 11)
+					System.out.print("   *              *\n");
+				else if(k == 12)
+					System.out.print("   *           	  *\n");
+				else if(k == 13)
+					System.out.print("   *           	  *\n");
+				else
+					System.out.print("   *\n");		
+			}
+			System.out.print("**********************************");
+		}
+		else if( nb_essai == 9) {
+			System.out.print("   **********************\n");
+			for(int k = 0; k < 17 ; k++) {
+				if(k == 0) 
+					System.out.print("   *    *         *\n");
+				else if(k == 1) 
+					System.out.print("   *   *          *\n");
+				else if(k == 2) 
+					System.out.print("   *  *           *\n");
+				else if(k == 3) 
+					System.out.print("   * *            *\n");
+				else if(k == 4) 
+					System.out.print("   **         *       *\n");
+				else if(k == 5)
+					System.out.print("   *          *       *\n");
+				else if(k == 6)
+					System.out.print("   *              *\n");
+				else if(k == 7)
+					System.out.print("   *              *\n");
+				else if(k == 8)
+					System.out.print("   *       ***    *    ***\n");
+				else if(k == 9)
+					System.out.print("   *          *   *   *\n");
+				else if(k == 10)
+					System.out.print("   *           *******\n");
+				else if(k == 11)
+					System.out.print("   *              *\n");
+				else if(k == 12)
+					System.out.print("   *           	  *\n");
+				else if(k == 13)
+					System.out.print("   *              *\n");
+				else if(k == 14)
+					System.out.print("   *           *     \n");
+				else if(k == 15)
+					System.out.print("   *           *     \n");
+				else
+					System.out.print("   *\n");		
+			}
+			System.out.print("**********************************");
+
+		}
+		else {
+			if( nb_essai == 10) {
+			System.out.print("   **********************\n");
+			for(int k = 0; k < 17 ; k++) {
+				if(k == 0) 
+					System.out.print("   *    *         *\n");
+				else if(k == 1) 
+					System.out.print("   *   *          *\n");
+				else if(k == 2) 
+					System.out.print("   *  *           *\n");
+				else if(k == 3) 
+					System.out.print("   * *            *\n");
+				else if(k == 4) 
+					System.out.print("   **         *       *\n");
+				else if(k == 5)
+					System.out.print("   *          *       *\n");
+				else if(k == 6)
+					System.out.print("   *              *\n");
+				else if(k == 7)
+					System.out.print("   *              *\n");
+				else if(k == 8)
+					System.out.print("   *       ***    *    ***\n");
+				else if(k == 9)
+					System.out.print("   *          *   *   *\n");
+				else if(k == 10)
+					System.out.print("   *           *******\n");
+				else if(k == 11)
+					System.out.print("   *              *\n");
+				else if(k == 12)
+					System.out.print("   *           	  *\n");
+				else if(k == 13)
+					System.out.print("   *              *\n");
+				else if(k == 14)
+					System.out.print("   *           *     *\n");
+				else if(k == 15)
+					System.out.print("   *           *     *\n");
+				else
+					System.out.print("   *\n");		
+			}
+			System.out.print("**********************************");
+		}
 	}
+	}
+
 	public void calculScore() {
 		if( nb_essai == 1 )
 			joueur1.score = 100;
@@ -125,10 +295,10 @@ public class Jeu {
 			this.comparaison();
 		}
 
-		if(nb_essai < 20)
-			System.out.print("Vous avez gagné en " + nb_essai + " essais !!!");
-		else
+		if(nb_essai > 9)
 			System.out.print("Vous avez perdu...");
+		else
+			System.out.print("Vous avez gagné en " + nb_essai + " essais !!!");
 
 		joueur1.ecriture_fichier_texte();
 	}
@@ -198,12 +368,12 @@ public class Jeu {
 		this.hide();
 	}
 
-	/*public void randomWord1() {
+	public void randomWord1() {
 		Random rand = new Random();
 
 		int rand_int = rand.nextInt(22001);
 		this.hide();
-	}*/	
+	}	
 
 	public void stockage1() throws IOException {
 		BufferedReader reader = new BufferedReader(new FileReader(dico_court));
@@ -224,7 +394,7 @@ public class Jeu {
 		this.randomWord();
 	} 
 
-	/*public void stockage2() throws IOException {
+	public void stockage2() throws IOException {
 		BufferedReader reader = new BufferedReader(new FileReader(dico_long));
 		//lecture du fichier dans ma liste
 		String test = reader.readLine();
@@ -240,14 +410,15 @@ public class Jeu {
 		}
 
 		this.randomWord1();
-	}*/
+	}
 
 	public static void main(String []args) throws IOException {	
-		Jeu parti1 = new Jeu();
-		parti1.stockage1();
-		parti1.essais();
-		//Jeu parti2 = new Jeu();
-		//parti2.stockage2();
+		//Jeu parti1 = new Jeu();
+		//parti1.stockage1();
+		//parti1.essais();
+		Jeu parti2 = new Jeu();
+		parti2.stockage2();
+		parti2.essais();
 		/*ce programme affiche les mots avec des indices de façon aléatoire.
 		de la liste de mot des documents texte "dicocourt" et "dicolong".
 		*/
